@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lantern Ramen — Midnight Noodle Stall</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="stage">
+    <canvas id="game" width="1280" height="800"></canvas>
+    <p id="fallback">Lantern Ramen needs JavaScript and a desktop browser. Open this file in Chrome and click the stall to start cooking.</p>
+  </div>
+  <script type="module">
+    import { Game } from './src/main.js';
+    const canvas = document.getElementById('game');
+    const game = new Game(canvas);
+    game.attach();
+    document.getElementById('fallback').remove();
+    requestAnimationFrame((t) => game.frame(t));
+    // Expose the game for play-testing and screenshots.
+    window.__lanternRamen = game;
+  </script>
+</body>
+</html>

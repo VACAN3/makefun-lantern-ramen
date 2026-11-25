@@ -1,0 +1,36 @@
+/* Lantern Ramen — page shell. The game itself is drawn on the canvas;
+   this only centres it on a dark night-market backdrop. */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #0d0a1e;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Trebuchet MS", "Noto Sans", sans-serif;
+}
+
+#stage {
+  position: relative;
+  max-width: 1280px;
+  width: 100%;
+}
+
+#game {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 0 60px rgba(255, 170, 80, 0.18), 0 24px 60px rgba(0, 0, 0, 0.6);
+}
+
+#fallback {
+  color: #c9a86a;
+  text-align: center;
+  padding: 12px;
+}
